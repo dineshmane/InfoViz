@@ -1,0 +1,62 @@
+  <html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+
+
+		['Year', 'Microsoft'],
+        ['2010',41.8],
+        ['2012',32.4],
+        ['2013',30.7],
+        ['2014',10.5],
+        ['2015',25.4],
+        ['2016',27.7],
+        ['2017',50]
+        /*		
+		['Year','Google'],
+        ['2010',3.8],
+        ['2012',45.5],
+        ['2013',45],
+        ['2014',18.8],
+        ['2015',32.6],
+        ['2016',17.6],
+        ['2017',43]
+		['Year','Apple'],
+        ['2010',17.8],
+        ['2012', 30.9],
+        ['2013',25.4],
+        ['2014',20.7],
+        ['2015',40.9],
+        ['2016',12.8],
+        ['2017',33,]*/
+		
+		
+		]);
+
+        var options = {
+          title: 'Company Stock Prices of 7 years',
+          colors: ['#0000FF'],
+          legend: { position: 'bottom' },
+		 vAxis: {title: 'Stock Price',
+              titleTextStyle:{color: 'red'}},	
+          hAxis: {title: 'Year',
+              titleTextStyle:{color: 'blue'}},
+          legend: { position: 'bottom' }
+		};
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+	
+  </body>
+</html>

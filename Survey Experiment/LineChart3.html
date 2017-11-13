@@ -1,0 +1,51 @@
+  <html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        
+		['Year','Apple'],
+        ['2010',17.8],
+        ['2012', 30.9],
+        ['2013',25.4],
+        ['2014',20.7],
+        ['2015',40.9],
+        ['2016',12.8],
+        ['2017',33,]
+		
+		
+		]);
+
+        var options = {
+          title: 'Company Stock Prices of 7 years',
+          //curveType: 'function',
+		  colors: ['#FF0000'],
+          legend: { position: 'bottom' },
+		/* series: {
+           
+            0: { color: '#f1ca3a' },
+			
+			
+			},*/
+		 vAxis: {title: 'Stock Price',
+              titleTextStyle:{color: 'red'}},	
+          hAxis: {title: 'Year',
+              titleTextStyle:{color: 'blue'}},
+          legend: { position: 'bottom' }
+		};
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="curve_chart" style="width: 900px; height: 500px"></div>
+	
+  </body>
+</html>
